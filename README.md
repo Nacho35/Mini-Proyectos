@@ -1,2 +1,2 @@
 # Primer Mini-Proyecto
-## Contador responsivo y multicolor  
+## Contador Responsivo y Multicolor  
