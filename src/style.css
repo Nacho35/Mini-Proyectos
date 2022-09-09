@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap");
+
+/*** RESET ***/
+
+* *::after *::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/**** CONTENEDOR ****/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1024px, 100px;
+}
+
+/***** TEXTO *****/
+
+.text {
+  font-style: italic;
+  font-size: 16rem;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+
+/***** BOTON *****/
+
+.btn-n {
+  padding: 1.3rem;
+  height: auto;
+  background-color: #ffd569;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 60px;
+  font-size: 15px;
+  border: none;
+  opacity: 75%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-family: "Lato", sans-serif;
+}
+
+/***** EFECTO DE SOMBRAS BOTON *****/
+
+.hvr-float-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-float-shadow:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center,
+      ellipse,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+
+.hvr-float-shadow:hover,
+.hvr-float-shadow:focus,
+.hvr-float-shadow:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+
+.hvr-float-shadow:hover:before,
+.hvr-float-shadow:focus:before,
+.hvr-float-shadow:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+
+/***** EFECTO DEL BACKGROUND BOTON *****/
+
+@-webkit-keyframes hvr-back-pulse {
+  50% {
+    background-color: #768eff;
+  }
+}
+
+@keyframes hvr-back-pulse {
+  50% {
+    background-color: #768eff;
+  }
+}
+
+.hvr-back-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+
+.hvr-back-pulse:hover,
+.hvr-back-pulse:focus,
+.hvr-back-pulse:active {
+  -webkit-animation-name: hvr-back-pulse;
+  animation-name: hvr-back-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-color: #7bf79f;
+  background-color: #7bf79f;
+  color: white;
+}
+
+/****** RESPONSIVIDAD ******/
+
+@media (min-width: 320px) {
+  .btn-n {
+    width: 35%;
+    padding: 1.5rem;
+    margin-left: 10%;
+  }
+
+  .text {
+    color: #f85741;
+    font-size: 15em;
+    padding-right: 30px;
+  }
+
+  body {
+    background: #384252;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-n {
+    width: 30%;
+    padding: 1.5rem;
+    margin-left: 14%;
+  }
+
+  .text {
+    color: #92ccb6;
+    font-size: 18em;
+    padding-left: 30px;
+  }
+
+  body {
+    background: #b19676;
+  }
+}
+
+@media (min-width: 992px) {
+  .btn-n {
+    width: 30%;
+    padding: 1.5rem;
+    margin-left: 14%;
+  }
+
+  .text {
+    color: #ff9a52;
+    font-size: 18em;
+    padding-left: 30px;
+  }
+
+  body {
+    background: #0074b4;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn-n {
+    width: 20%;
+    padding: 1.5rem;
+    margin-left: 20%;
+  }
+
+  .text {
+    color: #ecc039;
+    font-size: 18em;
+    padding-left: 30px;
+  }
+
+  body {
+    background: #0f928c;
+  }
+}
